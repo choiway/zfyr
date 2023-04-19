@@ -6,6 +6,8 @@ import (
 )
 
 var (
+    //go:generate npm i
+    //go:generate npm run build
 	//go:embed all:dist
 	dist embed.FS
 	//go:embed dist/index.html
