@@ -1,14 +1,19 @@
 package main
 
 import (
-    "net/http"
-    "github.com/labstack/echo/v4"
+	"github.com/labstack/echo/v4"
+    "zyfr/web"
+	"net/http"
 )
 
 func main() {
-    e := echo.New()
-    e.GET("/", func(c echo.Context) error {
-        return c.String(http.StatusOK, "Hello, Peeeps")
-    })
-    e.Logger.Fatal(e.Start(":1323"))
+	e := echo.New()
+
+    web.RegisterHandlers(e)
+
+	e.GET("/api", func(c echo.Context) error {
+		return c.String(http.StatusOK, "Hello, Peeeps")
+	})
+
+	e.Logger.Fatal(e.Start(":1323"))
 }
