@@ -24,7 +24,7 @@ const App: Component = () => {
                     Edit <code>src/App.tsx</code> and save to reload.
                     How about this?
                 </p>
-                <p>
+                <p class="text-4xl text-red-600">
                     This is the money
                 </p>
 
