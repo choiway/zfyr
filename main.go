@@ -4,9 +4,19 @@ import (
 	"github.com/labstack/echo/v4"
     "zyfr/web"
 	"net/http"
+    "os/exec"
+    "fmt"
+    "log"
 )
 
 func main() {
+    out, err := exec.Command("ls", "-l").Output()
+
+    if err != nil {
+        log.Fatal(err)
+    }
+
+    fmt.Println(string(out))
 	e := echo.New()
 
     web.RegisterHandlers(e)

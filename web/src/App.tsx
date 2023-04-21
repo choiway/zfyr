@@ -1,7 +1,9 @@
 import { createSignal, onMount } from "solid-js";
 import type { Component } from 'solid-js';
+import { Routes, Route, Link, A } from "@solidjs/router";
 
-import logo from './logo.svg';
+import Shares from "./Shares";
+
 import styles from './App.module.css';
 
 // const fetchUser = async () =>
@@ -17,28 +19,41 @@ const App: Component = () => {
 
 
     return (
-        <div class={styles.App}>
-            <header class={styles.header}>
-                <img src={logo} class={styles.logo} alt="logo" />
-                <p>
-                    Edit <code>src/App.tsx</code> and save to reload.
-                    How about this?
-                </p>
-                <p class="text-4xl text-red-600">
-                    This is the money
-                </p>
+        <>
+            <p class="text-4xl text-green-600">
+                This is the money
+            </p>
 
-                <p>{greeting()}</p>
-                <a
-                    class={styles.link}
-                    href="https://github.com/solidjs/solid"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Learn Solid
-                </a>
-            </header>
-        </div>
+            <p>{greeting()}</p>
+            <a
+                class={styles.link}
+                href="https://github.com/solidjs/solid"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Learn Solid
+            </a>
+
+            <div>
+                <A href="/shares">Link to Shares</A>
+            </div>
+
+            <div>
+                <Link href="/about">Link to About</Link>
+            </div>
+
+            <Routes>
+                <Route
+                    path="/"
+                    element={<div>Home page</div>}
+                />
+                <Route path="/shares" component={Shares} />
+                <Route
+                    path="/about"
+                    element={<div>This site was made with Solid</div>}
+                />
+            </Routes>
+        </>
     );
 };
 
