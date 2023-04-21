@@ -3,7 +3,6 @@ import type { Component } from 'solid-js';
 import { Routes, Route, Link, A } from "@solidjs/router";
 
 import Shares from "./Shares";
-
 import styles from './App.module.css';
 
 // const fetchUser = async () =>
