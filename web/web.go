@@ -20,5 +20,8 @@ var (
 func RegisterHandlers(e *echo.Echo) {
     e.StaticFS("/", distDirFS)
 	e.FileFS("/", "index.html", distIndexHtml)
+
+    // These urls should mirror the one in the solidjs router
 	e.FileFS("/shares", "index.html", distIndexHtml)
+    e.FileFS("/about", "index.html", distIndexHtml)
 }

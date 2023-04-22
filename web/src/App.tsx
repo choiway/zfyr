@@ -18,27 +18,28 @@ const App: Component = () => {
 
 
     return (
-        <>
+        <div>
             <p class="text-4xl text-green-600">
                 This is the money
             </p>
-
-            <p>{greeting()}</p>
-            <a
-                class={styles.link}
-                href="https://github.com/solidjs/solid"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                Learn Solid
-            </a>
-
-            <div>
-                <A href="/shares">Link to Shares</A>
+            <div class="my-2">
+                <p>{greeting()}</p>
+                <a
+                    class={styles.link}
+                    href="https://github.com/solidjs/solid"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Learn Solid
+                </a>
             </div>
 
             <div>
+                <A class="py-3 px-2 bg-blue-600 text-white" href="/shares">Link to Shares</A>
                 <Link href="/about">Link to About</Link>
+            </div>
+
+            <div>
             </div>
 
             <Routes>
@@ -52,7 +53,7 @@ const App: Component = () => {
                     element={<div>This site was made with Solid</div>}
                 />
             </Routes>
-        </>
+        </div>
     );
 };
 
