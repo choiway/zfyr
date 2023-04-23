@@ -20,7 +20,7 @@ const App: Component = () => {
     return (
         <div>
             <p class="text-4xl text-green-600">
-                This is the money
+                Does this change
             </p>
             <div class="my-2">
                 <p>{greeting()}</p>
