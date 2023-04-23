@@ -56,8 +56,16 @@ func main() {
 
 }
 
+type IndexPayload struct {
+    Title string
+}
+
+var indexPayload = IndexPayload{
+    Title: "Homies, this is from index payload",
+}
+
 func Index(c echo.Context) error {
-	return c.Render(http.StatusOK, "index", "World")
+	return c.Render(http.StatusOK, "index.html", indexPayload)
 }
 
 type Template struct {
